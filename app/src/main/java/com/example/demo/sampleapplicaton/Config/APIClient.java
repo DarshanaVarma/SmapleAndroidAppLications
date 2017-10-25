@@ -1,12 +1,12 @@
-package com.example.demo.sampleapplicaton;
+package com.example.demo.sampleapplicaton.Config;
 
-import retrofit2.Retrofit;
+import com.example.demo.sampleapplicaton.Config.RetrofitClient;
 
 /**
  * Created by admin on 10/23/2017.
  */
 
-class APIClient {
+public class APIClient {
 
     public static ApiInterface getAPIClient(){
 

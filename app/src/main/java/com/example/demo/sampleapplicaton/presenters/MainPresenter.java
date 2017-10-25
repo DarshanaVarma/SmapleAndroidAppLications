@@ -1,7 +1,12 @@
-package com.example.demo.sampleapplicaton;
+package com.example.demo.sampleapplicaton.presenters;
 
-import android.app.Activity;
 import android.content.Context;
+
+
+import com.example.demo.sampleapplicaton.Config.APIClient;
+import com.example.demo.sampleapplicaton.Config.ApiInterface;
+import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
+import com.example.demo.sampleapplicaton.views.MainView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +24,7 @@ public class MainPresenter {
 
     public MainPresenter(Context context, MainView activity) {
         this.context=context;
-        apiInterface=APIClient.getAPIClient();
+        apiInterface= APIClient.getAPIClient();
         this.mainView=activity;
 
     }

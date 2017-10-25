@@ -1,4 +1,4 @@
-package com.example.demo.sampleapplicaton;
+package com.example.demo.sampleapplicaton.Config;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
