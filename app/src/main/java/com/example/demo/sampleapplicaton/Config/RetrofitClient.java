@@ -12,7 +12,7 @@ class RetrofitClient {
     static Retrofit getClient()
     {
         return new Retrofit.Builder()
-                .baseUrl("http://ec2-34-213-192-138.us-west-2.compute.amazonaws.com/appexchange/appexchangeserver/api/")
+                .baseUrl("enter base url")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
