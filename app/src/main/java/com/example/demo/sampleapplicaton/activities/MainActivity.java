@@ -2,6 +2,7 @@ package com.example.demo.sampleapplicaton.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
 import com.example.demo.sampleapplicaton.presenters.MainPresenter;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         mainPresenter= new MainPresenter(this,this);
         mainPresenter.getResponse(7);
+
+
+        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
     }
 
     @Override
