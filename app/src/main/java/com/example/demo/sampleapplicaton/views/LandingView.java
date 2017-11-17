@@ -9,7 +9,7 @@ import com.example.demo.sampleapplicaton.models.UserDetailPojo;
  */
 
 public interface LandingView {
-    void userDetail(UserDetailPojo body);
+    void userDetail(GroupInfoPojo body);
     void showMessage(String message);
     void redirectToWebsite(String webUrl);
 }

@@ -33,7 +33,7 @@ public class MainPresenter {
     public void getResponse(Integer userid) {
 
 
-        Call<GroupInfoPojo> call= apiInterface.getContent(String.valueOf(userid));
+        Call<GroupInfoPojo> call= apiInterface.getContent();
         call.enqueue(new Callback<GroupInfoPojo>() {
             @Override
             public void onResponse(Call<GroupInfoPojo> call, Response<GroupInfoPojo> response) {

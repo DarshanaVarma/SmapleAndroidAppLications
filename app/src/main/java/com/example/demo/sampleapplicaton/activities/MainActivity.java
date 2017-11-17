@@ -21,6 +21,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void render(GroupInfoPojo body) {
-        body.getContents();
+//        body.getContents();
     }
 }

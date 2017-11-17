@@ -3,6 +3,7 @@ package com.example.demo.sampleapplicaton.presenters;
 
 import com.example.demo.sampleapplicaton.Config.ApiInterface;
 import com.example.demo.sampleapplicaton.Config.SharedUtils;
+import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
 import com.example.demo.sampleapplicaton.models.UserDetailPojo;
 import com.example.demo.sampleapplicaton.views.LandingView;
 
@@ -28,18 +29,19 @@ public class LandingPresenter {
         this.utils = utils;
     }
 
-    public void getUsetDetails(Integer userid){
-        Call<UserDetailPojo> call1 = apiInterface.getUserDetails(userid);
-        call1.enqueue(new Callback<UserDetailPojo>() {
+    public void getUsetDetails(){
+        Call<GroupInfoPojo> call1 = apiInterface.getContent();
+        call1.enqueue(new Callback<GroupInfoPojo>() {
             @Override
-            public void onResponse(Call<UserDetailPojo> call, Response<UserDetailPojo> response) {
+            public void onResponse(Call<GroupInfoPojo> call, Response<GroupInfoPojo> response) {
+                response.body();
                 view.userDetail(response.body());
-                utils.setAdminFlag(response.body().getAdminflag());
-                utils.setIsUserGroupExist(response.body().getUsergroupexist());
+//                utils.setAdminFlag(response.body().getAdminflag());
+//                utils.setIsUserGroupExist(response.body().getUsergroupexist());
             }
 
             @Override
-            public void onFailure(Call<UserDetailPojo> call, Throwable t) {
+            public void onFailure(Call<GroupInfoPojo> call, Throwable t) {
                 String msg = "" + t.getMessage();
                 view.showMessage("Please check internet connection");
 

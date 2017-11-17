@@ -12,7 +12,7 @@ class RetrofitClient {
     static Retrofit getClient()
     {
         return new Retrofit.Builder()
-                .baseUrl("enter base url")
+                .baseUrl("https://api.androidhive.info/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

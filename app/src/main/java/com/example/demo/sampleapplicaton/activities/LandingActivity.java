@@ -9,6 +9,7 @@ import com.example.demo.sampleapplicaton.dagger.components.DaggerLandingActivity
 import com.example.demo.sampleapplicaton.dagger.components.LandingActivityComponent;
 import com.example.demo.sampleapplicaton.dagger.components.MainComponent;
 import com.example.demo.sampleapplicaton.dagger.modules.LandingActivityModule;
+import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
 import com.example.demo.sampleapplicaton.models.UserDetailPojo;
 import com.example.demo.sampleapplicaton.presenters.LandingPresenter;
 import com.example.demo.sampleapplicaton.views.LandingView;
@@ -31,13 +32,17 @@ public class LandingActivity extends AppCompatActivity implements LandingView {
         component.injectLandingActivity(this);
 
 
-        presenter.getUsetDetails(7);
+        presenter.getUsetDetails();
 
     }
 
+
+
     @Override
-    public void userDetail(UserDetailPojo body) {
-            body.getProfilepic();
+    public void userDetail(GroupInfoPojo body) {
+
+        body.getContacts();
+
     }
 
     @Override
