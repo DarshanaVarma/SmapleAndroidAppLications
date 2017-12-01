@@ -27,7 +27,7 @@ public class ApiInterfaceModule {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
-                .baseUrl("http://ec2-34-213-192-138.us-west-2.compute.amazonaws.com/appexchange/appexchangeserver/api/")
+                .baseUrl("https://reqres.in")
                 .build();
     }
 }

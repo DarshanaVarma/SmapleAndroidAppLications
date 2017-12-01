@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.example.demo.sampleapplicaton.Config.APIClient;
 import com.example.demo.sampleapplicaton.Config.ApiInterface;
-import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
+import com.example.demo.sampleapplicaton.models.ContactDetailsPojo;
 import com.example.demo.sampleapplicaton.views.MainView;
 
 import retrofit2.Call;
@@ -30,21 +30,21 @@ public class MainPresenter {
     }
 
 
-    public void getResponse(Integer userid) {
-
-
-        Call<GroupInfoPojo> call= apiInterface.getContent();
-        call.enqueue(new Callback<GroupInfoPojo>() {
-            @Override
-            public void onResponse(Call<GroupInfoPojo> call, Response<GroupInfoPojo> response) {
-                response.body();
-                mainView.render(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<GroupInfoPojo> call, Throwable t) {
-
-            }
-        });
-    }
+//    public void getResponse(Integer userid) {
+//
+//
+//        Call<ContactDetailsPojo> call= apiInterface.getContent();
+//        call.enqueue(new Callback<ContactDetailsPojo>() {
+//            @Override
+//            public void onResponse(Call<ContactDetailsPojo> call, Response<ContactDetailsPojo> response) {
+//                response.body();
+//                mainView.render(response.body());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ContactDetailsPojo> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 }

@@ -1,13 +1,14 @@
 package com.example.demo.sampleapplicaton.Config;
 
-import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
-import com.example.demo.sampleapplicaton.models.UserDetailPojo;
+import com.example.demo.sampleapplicaton.models.ContactDetailsPojo;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * Created by admin on 10/23/2017.
@@ -15,10 +16,16 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    @GET("contacts")
-    Call<GroupInfoPojo> getContent();
+    @GET("/api/unknown")
+    Call<ContactDetailsPojo> doGetListResources();
 
-//    @FormUrlEncoded
-//    @POST("profile.php")
-//    Call<UserDetailPojo> getUserDetails(@Field("userid") Integer userid);
+    @POST("/api/users")
+    Call<ContactDetailsPojo> createUser(@Body ContactDetailsPojo user);
+
+    @GET("/api/users?")
+    Call<ContactDetailsPojo> doGetUserList(@Query("page") String page);
+
+    @FormUrlEncoded
+    @POST("/api/users?")
+    Call<ContactDetailsPojo> doCreateUserWithField(@Field("name") String name, @Field("job") String job);
 }

@@ -36,86 +36,21 @@ public class SharedUtils {
         return sharePref.getInt("UserId",0);
     }
 
-    public void  setAdminFlag(Integer adminFlag){
+    public void  setFlag(Integer adminFlag){
         editor.putInt("Is_admin",adminFlag);
         editor.commit();
     }
-    public int getAdminFlag(){
+    public int getFlag(){
         return sharePref.getInt("Is_admin",0);
     }
 
 
-    public void setInternalTransactionId(String transactionId){
-        editor.putString("transaction_id",transactionId);
+    public void setId(String transactionId){
+        editor.putString("_id",transactionId);
         editor.commit();
     }
-    public String getInternalTransactionId(){
-        return sharePref.getString("transaction_id","");
-    }
-
-    public void setPackageName(String packageName) {
-        editor.putString("PACKAGE_LIST", packageName);
-        editor.commit();
-    }
-
-    public String getPackageName() {
-        return  sharePref.getString("PACKAGE_LIST","");
-    }
-
-    public void setFirstTimeOverlay(boolean isFirstTimeoverlayval) {
-        editor.putBoolean("IsFirstTimeOvelay", isFirstTimeoverlayval);
-        editor.commit();
-    }
-
-    public boolean isFirstTimeoverlay() {
-        return sharePref.getBoolean("IsFirstTimeOvelay", true);
-    }
-
-
-    public void setFirstTimeOverlayProfile(boolean isFirstTimeoverlayvalprofile) {
-        editor.putBoolean("IsFirstTimeOvelayPROFILE", isFirstTimeoverlayvalprofile);
-        editor.commit();
-    }
-
-    public boolean isFirstTimeoverlayprofile() {
-        return sharePref.getBoolean("IsFirstTimeOvelayPROFILE", true);
-    }
-
-    public void setUserEmail(String email){
-        editor.putString("user_email", email);
-        editor.commit();
-    }
-    public String getUserEmail(){
-        return sharePref.getString("user_email","");
-    }
-
-
-
-    public void setFirstTimePopUp(boolean isFirstTimepopupval) {
-        editor.putBoolean("IsFirstTimePopUp", isFirstTimepopupval);
-        editor.commit();
-    }
-
-    public boolean isFirstTimePopUp() {
-        return sharePref.getBoolean("IsFirstTimePopUp", true);
-    }
-
-    public void setIsUserGroupExist(Integer value){
-        editor.putInt("IsUserGroupExest",value);
-        editor.commit();
-    }
-    public Integer getIsUserGroupExist(){
-        return sharePref.getInt("IsUserGroupExest",0);
-    }
-
-
-    public void setFirebaseToken(String token){
-        editor.putString("FirebaseToken",token);
-        editor.commit();
-    }
-
-    public String getFirebaseToken(){
-        return sharePref.getString("FirebaseToken","");
+    public String getId(){
+        return sharePref.getString("_id","");
     }
 
 

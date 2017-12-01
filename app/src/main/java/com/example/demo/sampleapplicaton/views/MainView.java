@@ -1,6 +1,6 @@
 package com.example.demo.sampleapplicaton.views;
 
-import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
+import com.example.demo.sampleapplicaton.models.ContactDetailsPojo;
 
 /**
  * Created by admin on 10/23/2017.
@@ -8,5 +8,5 @@ import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
 
 public interface MainView {
 
-    void render(GroupInfoPojo body);
+    void render(ContactDetailsPojo body);
 }

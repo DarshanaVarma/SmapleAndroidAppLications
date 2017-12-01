@@ -38,26 +38,17 @@ public class MyApplication extends Application {
     private static MyApplication mInstance;
     private OkHttpClient okHttpClient;
 
-    private static final String TWITTER_KEY = "GfmsWZ5AY4bpwWXcrxUWZNEdm";
-    private static final String TWITTER_SECRET = "KL6udJr0KK3yDsFvqrMKRs3sOGNM0ybUtmzH4norHwrnljQm8Y";
 
 
     @Override
     public void onCreate() {
         super.onCreate();
          component= DaggerMainComponent.builder().contextModule(new ContextModule(this)).build();
-
-
         apiInterface= component.getApiInterface();
         picasso=component.getPicasso();
         utils=component.getUtils();
         okHttpClient = component.getOkHttpClient();
         mInstance=this;
-
-
-
-
-
     }
 
 
@@ -86,9 +77,6 @@ public class MyApplication extends Application {
     }
 
 
-//            component= DaggerAppComponent.builder().contextModule(new ContextModule(this)).build();
-
-
-    }
+}
 
 

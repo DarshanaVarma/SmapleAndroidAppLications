@@ -3,8 +3,7 @@ package com.example.demo.sampleapplicaton.presenters;
 
 import com.example.demo.sampleapplicaton.Config.ApiInterface;
 import com.example.demo.sampleapplicaton.Config.SharedUtils;
-import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
-import com.example.demo.sampleapplicaton.models.UserDetailPojo;
+import com.example.demo.sampleapplicaton.models.ContactDetailsPojo;
 import com.example.demo.sampleapplicaton.views.LandingView;
 
 import javax.inject.Inject;
@@ -30,18 +29,17 @@ public class LandingPresenter {
     }
 
     public void getUsetDetails(){
-        Call<GroupInfoPojo> call1 = apiInterface.getContent();
-        call1.enqueue(new Callback<GroupInfoPojo>() {
+        Call<ContactDetailsPojo> call1 = apiInterface.doGetListResources();
+        call1.enqueue(new Callback<ContactDetailsPojo>() {
             @Override
-            public void onResponse(Call<GroupInfoPojo> call, Response<GroupInfoPojo> response) {
+            public void onResponse(Call<ContactDetailsPojo> call, Response<ContactDetailsPojo> response) {
                 response.body();
                 view.userDetail(response.body());
-//                utils.setAdminFlag(response.body().getAdminflag());
-//                utils.setIsUserGroupExist(response.body().getUsergroupexist());
+
             }
 
             @Override
-            public void onFailure(Call<GroupInfoPojo> call, Throwable t) {
+            public void onFailure(Call<ContactDetailsPojo> call, Throwable t) {
                 String msg = "" + t.getMessage();
                 view.showMessage("Please check internet connection");
 

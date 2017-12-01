@@ -7,10 +7,8 @@ import com.example.demo.sampleapplicaton.MyApplication;
 import com.example.demo.sampleapplicaton.R;
 import com.example.demo.sampleapplicaton.dagger.components.DaggerLandingActivityComponent;
 import com.example.demo.sampleapplicaton.dagger.components.LandingActivityComponent;
-import com.example.demo.sampleapplicaton.dagger.components.MainComponent;
 import com.example.demo.sampleapplicaton.dagger.modules.LandingActivityModule;
-import com.example.demo.sampleapplicaton.models.GroupInfoPojo;
-import com.example.demo.sampleapplicaton.models.UserDetailPojo;
+import com.example.demo.sampleapplicaton.models.ContactDetailsPojo;
 import com.example.demo.sampleapplicaton.presenters.LandingPresenter;
 import com.example.demo.sampleapplicaton.views.LandingView;
 
@@ -39,15 +37,15 @@ public class LandingActivity extends AppCompatActivity implements LandingView {
 
 
     @Override
-    public void userDetail(GroupInfoPojo body) {
+    public void userDetail(ContactDetailsPojo body) {
 
-        body.getContacts();
+
 
     }
 
     @Override
     public void showMessage(String message) {
-
+        message.length();
     }
 
     @Override
